@@ -110,8 +110,8 @@ break;
 case 11:
  this.$ = $$[$0-2]; $$[$0-2].push($$[$0]); 
 break;
-case 12: case 16: case 17:
- this.$ = $$[$0]; 
+case 12:
+ this.$ = $$[$0].slice(1, -1); 
 break;
 case 13:
  this.$ = parseFloat(yytext); 
@@ -121,6 +121,9 @@ case 14:
 break;
 case 15:
  this.$ = null; 
+break;
+case 16: case 17:
+ this.$ = $$[$0]; 
 break;
 }
 },
@@ -614,9 +617,9 @@ case 5:return 13;
 break;
 case 6:return 11;
 break;
-case 7:return 12;   // Match double-quoted strings
+case 7:return 12;  // Match double-quoted strings
 break;
-case 8:return 18;   // Match numbers, with optional negative sign
+case 8:return 18;  // Match numbers, with optional negative sign
 break;
 case 9:return 19; // Match true/false
 break;

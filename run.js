@@ -2,7 +2,7 @@ const fs = require('fs');
 const parser = require('./json-parser');
 
 // Read the JSON file
-const filePath = 'tests/test7.json';
+const filePath = 'tests/test8.json';
 try {
   const testJson = fs.readFileSync(filePath, 'utf-8'); // Read the file synchronously
 

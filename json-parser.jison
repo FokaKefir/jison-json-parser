@@ -1,18 +1,18 @@
 %lex
 %%
-\s+                    /* Skip whitespace */
-"{"                    return '{';
-"}"                    return '}';
-"["                    return '[';
-"]"                    return ']';
-":"                    return ':';
-","                    return ',';
-\"([^"]*)\"            return 'STRING';   // Match double-quoted strings
-[-]?[0-9]+(\.[0-9]+)?    return 'NUMBER';   // Match numbers, with optional negative sign
-true|false             return 'BOOLEAN'; // Match true/false
-null                   return 'NULL';    // Match null
-<<EOF>>                return 'EOF';     // Match end of file
-.                      return 'INVALID'; // Catch all other characters
+\s+                     /* Skip whitespace */
+"{"                     return '{';
+"}"                     return '}';
+"["                     return '[';
+"]"                     return ']';
+":"                     return ':';
+","                     return ',';
+\"([^"]*)\"             return 'STRING';  // Match double-quoted strings
+[-]?[0-9]+(\.[0-9]+)?   return 'NUMBER';  // Match numbers, with optional negative sign
+true|false              return 'BOOLEAN'; // Match true/false
+null                    return 'NULL';    // Match null
+<<EOF>>                 return 'EOF';     // Match end of file
+.                       return 'INVALID'; // Catch all other characters
 /lex
 
 %start json
@@ -49,7 +49,7 @@ elements
     ;
 
 value
-    : 'STRING'             { $$ = $1; }  // Preserve quotes for string values
+    : 'STRING'             { $$ = $1.slice(1, -1); }  // Preserve quotes for string values
     | 'NUMBER'             { $$ = parseFloat(yytext); }
     | 'BOOLEAN'            { $$ = (yytext === "true"); }
     | 'NULL'               { $$ = null; }

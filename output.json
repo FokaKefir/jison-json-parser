@@ -1,11 +1,21 @@
 {
-  "data": [
-    42,
-    "\"text\"",
-    true,
-    null,
-    {
-      "key": "\"value\""
-    }
-  ]
+  "school": {
+    "name": "Greenwood High",
+    "address": {
+      "street": "123 Elm St",
+      "city": "Springfield",
+      "state": "IL",
+      "zip": "62701"
+    },
+    "students": [
+      {
+        "id": 1,
+        "name": "Emily"
+      },
+      {
+        "id": 2,
+        "name": "Michael"
+      }
+    ]
+  }
 }
