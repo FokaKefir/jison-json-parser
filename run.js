@@ -4,7 +4,7 @@ const parser = require('./json-parser');
 
 const testJson = `
 {
-  "key1": 42123,
+  "key1": -42123,
   "key2": 3.14,
   "key3": 3.1415,
   "key4": true,

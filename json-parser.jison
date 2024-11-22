@@ -8,7 +8,7 @@
 ":"                    return ':';
 ","                    return ',';
 \"([^"]*)\"            return 'STRING';   // Match double-quoted strings
-[0-9]+(\.[0-9]+)?    return 'NUMBER';   // Match numbers, with optional negative sign
+[-]?[0-9]+(\.[0-9]+)?    return 'NUMBER';   // Match numbers, with optional negative sign
 true|false             return 'BOOLEAN'; // Match true/false
 null                   return 'NULL';    // Match null
 <<EOF>>                return 'EOF';     // Match end of file
