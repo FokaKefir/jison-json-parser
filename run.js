@@ -1,29 +1,25 @@
-const fs = require('fs')
-
+const fs = require('fs');
 const parser = require('./json-parser');
 
-const testJson = `
-{
-  "key1": -42123,
-  "key2": 3.14,
-  "key3": 3.1415,
-  "key4": true,
-  "key5": null,
-  "key6": [1, 2, 3.5]
-}`;
-
+// Read the JSON file
+const filePath = 'tests/test7.json';
 try {
+  const testJson = fs.readFileSync(filePath, 'utf-8'); // Read the file synchronously
+
+  // Parse the JSON
   const result = parser.parse(testJson);
   console.log(result);
-  console.log(result['key1']);
 
-    // Write data in 'Output.txt' .
-    data = JSON.stringify(result);
-    fs.writeFile('Output.txt', data, 'utf-8', (err) => {
+  // Get a random key from the parsed object
+  const keys = Object.keys(result);
+  const randomKey = keys[Math.floor(Math.random() * keys.length)];
+  console.log(`Value of random key "${randomKey}":`, result[randomKey]);
 
-        // In case of a error throw err.
-        if (err) throw err;
-    })
+  // Write the parsed result to 'Output.txt'
+  const data = JSON.stringify(result, null, 2); // Format with 2-space indentation
+  fs.writeFileSync('output.json', data, 'utf-8'); // Write the file synchronously
+
+  console.log(`Parsed JSON written to Output.txt`);
 } catch (err) {
-  console.error('Parse error:', err.message);
+  console.error('Error:', err.message);
 }
