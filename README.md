@@ -8,12 +8,8 @@ A Jison hasonlít a klasszikus Bison vagy Yacc eszközökhöz, de kifejezetten J
 
 Összefoglalva, a Jison egy JSON-alapú vagy Bison-stílusú nyelvtant fogad, majd egy olyan JavaScript fájlt hoz létre, amely a nyelv elemzésére alkalmas. Ez a rugalmasság lehetővé teszi különböző típusú nyelvek és formátumok, például JSON vagy HTML, hatékony feldolgozását.
 
----
-
 ## 2. Nyelv Választása
 A projekt során egy JSON-formátumú adatleíró nyelvet választottunk, amely széles körben használt a webes API-k és konfigurációs fájlok kezelésében. A JSON szerkezete egyszerű, de elég komplex ahhoz, hogy kihívást jelentsen az elemző implementálásában.
-
----
 
 ## 3. Elemző Tervezése
 A JSON szintaktikai szabályainak megfelelően az elemző a következő struktúrákat támogatja:
@@ -89,8 +85,6 @@ A nyelv következő szintaktikai szabályait valósítottuk meg:
    ```
    **Elemzés**: A `product` kulcs egy objektumot tartalmaz, amely maga is egy másik objektumot (`specs`) tartalmaz, a processzor, RAM és tárhely specifikációival.
 
----
-
 ## 4. Implementáció
 Az elemzőt a Jison segítségével készítettük, és a következő lépéseket hajtottuk végre:
 - **Lexikai elemző**: A `%lex` szekció szabályai definiálják, hogyan azonosítja az elemző az egyes tokeneket (pl. stringek, számok, zárójelek).
@@ -101,8 +95,6 @@ A megvalósított fájlok:
 - **json-parser.jison**: Az elemző nyelvtani szabályait tartalmazza.
 - **run.js**: Az elemző futtatását és a JSON fájlok feldolgozását végző script.
 - **tests/*.json**: Teszt file-ok a tests folder alatt jelennek meg.
-
----
 
 ## 5. Tesztelés
 A tesztelés célja az elemző helyességének és robusztusságának ellenőrzése volt, helyes és helytelen bemenetekkel egyaránt. Példák:
@@ -128,8 +120,6 @@ Kimenet: A JSON objektum helyesen feldolgozva, strukturált JavaScript objektumm
 ```
 Kimenet: `Error: Unexpected token '9' at line 1, column 22`. A hibát az extra `.` karakter okozta a szám formátumban.
 
----
-
 ## 6. Fejlesztési Kihívások és Megoldások
 **Kihívás**: A JSON szabályok pontos megvalósítása (pl. számformátumok, string idézőjelek kezelése).  
 **Megoldás**: A Jison nyelvi specifikáció pontos kidolgozása és iteratív tesztelés.
@@ -139,8 +129,6 @@ Kimenet: `Error: Unexpected token '9' at line 1, column 22`. A hibát az extra `
 
 **Kihívás**: Szintaktikai hibákat helyetelenül fejezte ki.  
 **Megoldás**: Saját hiba kezelő kidolgozása, amely megjeleníti a hibás karaktert és a sor/oszlop indexet.
-
----
 
 ## 7. Eredmények
 - **Főbb eredmények**: A JSON-elemző képes volt feldolgozni helyes bemeneteket, és pontos hibajelzést adott helytelen szintaxis esetén.
