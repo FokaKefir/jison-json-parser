@@ -1,21 +1,17 @@
 {
-  "school": {
-    "name": "Greenwood High",
-    "address": {
-      "street": "123 Elm St",
-      "city": "Springfield",
-      "state": "IL",
-      "zip": "62701"
-    },
-    "students": [
-      {
-        "id": 1,
-        "name": "Emily"
-      },
-      {
-        "id": 2,
-        "name": "Michael"
-      }
-    ]
-  }
+  "product": {
+    "id": 12345,
+    "name": "Laptop",
+    "price": 9999.9
+  },
+  "specs": {
+    "processor": "Intel i7",
+    "ram": "16GB",
+    "storage": "512GB SSD"
+  },
+  "tags": [
+    "electronics",
+    "computers",
+    "laptops"
+  ]
 }

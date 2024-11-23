@@ -49,10 +49,14 @@ elements
     ;
 
 value
-    : 'STRING'             { $$ = $1.slice(1, -1); }  // Preserve quotes for string values
+    : 'STRING'             { $$ = $1.slice(1, -1); }
     | 'NUMBER'             { $$ = parseFloat(yytext); }
     | 'BOOLEAN'            { $$ = (yytext === "true"); }
     | 'NULL'               { $$ = null; }
     | object               { $$ = $1; }
     | array                { $$ = $1; }
+    | error                { 
+        const { first_line, first_column } = yy.lexer.yylloc;
+        throw new Error(`Unexpected token '${yytext}' at line ${first_line}, column ${first_column}`);
+    }
     ;
