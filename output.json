@@ -1,17 +1,10 @@
 {
-  "product": {
-    "id": 12345,
-    "name": "Laptop",
-    "price": 9999.9
-  },
-  "specs": {
-    "processor": "Intel i7",
-    "ram": "16GB",
-    "storage": "512GB SSD"
-  },
-  "tags": [
-    "electronics",
-    "computers",
-    "laptops"
-  ]
+  "settings": {
+    "theme": "light",
+    "notifications": {
+      "email": true,
+      "sms": false
+    },
+    "version": "1.0.0"
+  }
 }
