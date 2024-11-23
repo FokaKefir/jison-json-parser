@@ -144,6 +144,5 @@ Kimenet: `Error: Unexpected token '9' at line 1, column 22`. A hibát az extra `
 
 ## 7. Eredmények
 - **Főbb eredmények**: A JSON-elemző képes volt feldolgozni helyes bemeneteket, és pontos hibajelzést adott helytelen szintaxis esetén.
-- **Dokumentáció**: A projekt részletesen dokumentálja az elemző tervezését, implementációját és tesztelését, beleértve a forráskódot és a bemeneti/kimeneti példákat.
 
 A projekt demonstrálja a Jison használatának hatékonyságát egyszerű nyelvek elemzésében, és alapot nyújt komplexebb elemzők fejlesztéséhez.
